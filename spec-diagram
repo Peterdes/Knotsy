@@ -1,0 +1,26 @@
+# Specyfikacja kodu diagramu
+
+ciągi elementów
+
+a bitów - liczba skrzyżowań, n
+b bitów - liczba końców, m
+
+n bitów - dodatnie lub ujemne skrzyżowania
+
+ciągi krotek:
+{
+1 bit - 0 koniec, 1 skrzyżowanie
+jeśli skrzyżowanie:
+    {
+    1 bit - 0 dół, 1 góra
+    jeśli góra:
+        {
+        1 bit - 0 ujemne, 1 dodatnie
+        }
+    a bitów - nr skrzyżowania
+    }
+jeśli koniec:
+    {
+    b bitów - nr końca
+    }
+}
