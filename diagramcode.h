@@ -1,28 +1,37 @@
 #ifndef DIAGRAMCODE_H
 #define DIAGRAMCODE_H
-#include <bitset>
+#include <vector>
+#include <tuple>
 
+template<int A, int B>
 class DiagramCode {
 public:
-    // Constructors, destructors, operators
-    DiagramCode(int);
+    DiagramCode();
     DiagramCode(const DiagramCode&);
     ~DiagramCode();
+    DiagramCode& operator=(const DiagramCode&);
     const bool operator==(const DiagramCode&);
     
-    // Sets bits
-    void setBits(int n,int len,int mask);
-    void setBit(int n,int bit);
-    void setBit(int n,bool bit);
+    // Number of crossings
+    int crossings();
+    // Number of ends
+    int ends();
     
-    // Reads bits
-    bool readBit(int n);
-    int readBits(int n,int len);
+    // Descriptions of strands
+    std::vector< std::tuple<int,
+        std::vector<int>.std::vector<bool>,std::vector<bool>,int> >
+            strands();
     
 private:
-    // Need to have length
-    DiagramCode();
-    DiagramCode& operator=(const DiagramCode&);
+    
+    // Sets bits
+    void setBits(int n,int len,unsigned int mask);
+    
+    // Reads bits
+    unsigned int readBits(int n,int len);    
+    
+    // Real data
+    std::vector<bool> _code;
 }
 
 #endif
